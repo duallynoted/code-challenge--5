@@ -6,15 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
     <title>Full Stack Messaging App</title>
 </head>
 <body ng-app="MessageApp" ng-controller="HomeController as vm">
 <h1>Full Stack Messaging App</h1>
-{{vm.message}}
 <div>
 <input type="text" placeholder="Name" ng-model="vm.objectToSend.name">
 <input type="text" placeholder="Message" ng-model="vm.objectToSend.message">
 <button ng-click="vm.addMessage(vm.objectToSend)">Send</button>
 </div>
+
+<ul ng-repeat="message in vm.messagesArray">
+    <li> <strong>{{message.name}}:</strong> {{message.message}}</li>
+</li>
+</ul>
+
 </body>
 </html>

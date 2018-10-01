@@ -26,10 +26,9 @@ messageApp.controller('HomeController', ['$http', function ($http) {
             data: newMessage
         }).then(function (response) {
             console.log('Back from Server with POST', response);
-            self.objectToSend = {};
             self.getMessages();
         }).catch(function (error) {
-            alert('Unable to add Entry: ', error);
+            alert('Unable to add Message: ', error);
             console.log('Error', error);
         });//end POST call             
     }
